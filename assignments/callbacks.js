@@ -86,11 +86,9 @@ function contains(item, list, cb) {
   return cb(list.includes(item));
 }
 
-const itemContained = contains('Pencil', items, (isInList) => {
-  if (items === 'Pencil') {
-    return true;
-  } else {
-    return false;
+const itemContained = contains('Pencil', items, () => {
+  if (true) {
+    return 'I have this item';
   }
 });
 

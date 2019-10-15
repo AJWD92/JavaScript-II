@@ -3,10 +3,26 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
-
+//Global (the world)
+function country(countryName) {
+  const lang = 'English';
+  console.log(`The country name is: ${countryName}`);
+  function state(stateName) {
+    console.log(
+      `you are in the state of: ${stateName} in the country of: ${countryName}`,
+    );
+    function capital(cityName) {
+      console.log(
+        `${cityName} is the capital of: ${stateName} and the offical language is ${lang}`,
+      );
+    } // this closes the capital
+    capital('Lansing');
+  } // this closes state
+  state('Michigan');
+} //this closes the country
+country('USA');
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
-
 
 // ==== Challenge 2: Implement a "counter maker" function ====
 const counterMaker = () => {
